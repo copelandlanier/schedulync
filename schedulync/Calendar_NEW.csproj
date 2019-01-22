@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02701F87-C149-4C8F-92D2-A1DB239CD8F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Calendar_NEW</RootNamespace>
+    <AssemblyName>Monolith Calendar</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Copeland\Desktop\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en-US</TargetCulture>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>92A53314474DF796125B050A0663B4BC9428D13F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Calendar_NEW_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mc_icon_256.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiteDB, Version=3.1.0.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\LiteDB_4.0\LiteDB.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config_Load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DATABASE_OPERATIONS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_Console.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_Console.Designer.cs">
+      <DependentUpon>Dialog_Console.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_DatabaseNotConnected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_DatabaseNotConnected.Designer.cs">
+      <DependentUpon>Dialog_DatabaseNotConnected.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_Exit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_Exit.Designer.cs">
+      <DependentUpon>Dialog_Exit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_Database.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_Database.Designer.cs">
+      <DependentUpon>Dialog_FirstRun_Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_DuplicateEntries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_DuplicateEntries.Designer.cs">
+      <DependentUpon>Dialog_FirstRun_DuplicateEntries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_FTPSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_FTPSettings.Designer.cs">
+      <DependentUpon>Dialog_FirstRun_FTPSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_FirstRun_Settings.Designer.cs">
+      <DependentUpon>Dialog_FirstRun_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_SettingsInternal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_SettingsInternal.Designer.cs">
+      <DependentUpon>Dialog_SettingsInternal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FTP_PROGRESS.cs" />
+    <Compile Include="FTP_PROGRESS.Designer.cs">
+      <DependentUpon>FTP_PROGRESS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global_Access.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Event_Overlays.cs" />
+    <Compile Include="Logic_Arrangement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logic_Merge.cs" />
+    <Compile Include="Month_Panel_Event_Overlay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day_Panel_Event_Overlay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dialog_DataEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_DataEntry.Designer.cs">
+      <DependentUpon>Dialog_DataEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_Repeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_Repeat.Designer.cs">
+      <DependentUpon>Dialog_Repeat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_Alarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_Alarm.Designer.cs">
+      <DependentUpon>Dialog_Alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Month_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Month_Control.Designer.cs">
+      <DependentUpon>Month_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Old_Code\Alpha_Class.cs" />
+    <Compile Include="Day_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Day_Control.Designer.cs">
+      <DependentUpon>Day_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Display_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display_Panel.Designer.cs">
+      <DependentUpon>Display_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Label_Events.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersonnelImageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersonnelImageBox.Designer.cs">
+      <DependentUpon>PersonnelImageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SnapClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Splash_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash_Screen.Designer.cs">
+      <DependentUpon>Splash_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Time_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Time_Panel.Designer.cs">
+      <DependentUpon>Time_Panel.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Day_Control.resx">
+      <DependentUpon>Day_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_Console.resx">
+      <DependentUpon>Dialog_Console.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_DatabaseNotConnected.resx">
+      <DependentUpon>Dialog_DatabaseNotConnected.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_Exit.resx">
+      <DependentUpon>Dialog_Exit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_FirstRun_Database.resx">
+      <DependentUpon>Dialog_FirstRun_Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_FirstRun_DuplicateEntries.resx">
+      <DependentUpon>Dialog_FirstRun_DuplicateEntries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_FirstRun_FTPSettings.resx">
+      <DependentUpon>Dialog_FirstRun_FTPSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_FirstRun_Settings.resx">
+      <DependentUpon>Dialog_FirstRun_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_SettingsInternal.resx">
+      <DependentUpon>Dialog_SettingsInternal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Display_Panel.resx">
+      <DependentUpon>Display_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_DataEntry.resx">
+      <DependentUpon>Dialog_DataEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_Repeat.resx">
+      <DependentUpon>Dialog_Repeat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_Alarm.resx">
+      <DependentUpon>Dialog_Alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.en-US.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Month_Control.resx">
+      <DependentUpon>Month_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonnelImageBox.resx">
+      <DependentUpon>PersonnelImageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Splash_Screen.resx">
+      <DependentUpon>Splash_Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Time_Panel.resx">
+      <DependentUpon>Time_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Calendar_NEW_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.image" />
+    <None Include="Resources\splash_screen_trans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ion_trading_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_alice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_slice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_SQUARE_slice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Color_Test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_reocurring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarm_Template.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_calendar_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_calendar_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_personnel_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_personnel_up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty_Personnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_calendar_up_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_TimeScale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_TimeScale_Grad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_TimeScale_Flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Monolith_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background_Large.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash_screen_trans_B.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Aqua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Lavendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Monolith.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Peach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Pink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Violet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BG_Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_SQUARE_slice_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_SQUARE_slice_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_SQUARE_slice_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avatar.image_sm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mc_icon_256.ico" />
+    <None Include="Resources\mc_icon_256.ico" />
+    <None Include="Resources\icon_reocurring_red.png" />
+    <None Include="Resources\icon_reocurring_black.png" />
+    <None Include="Resources\icon_alarm_red.png" />
+    <None Include="Resources\icon_alarm_black.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
